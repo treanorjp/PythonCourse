@@ -2,7 +2,7 @@ from pptx import Presentation
 from pptx.util import Inches
 
 # Create a presentation object
-prs = Presentation()
+prs = Presentation('OOP_in_Python.pptx')
 
 # Title Slide
 slide_layout = prs.slide_layouts[0]  # 0 is the layout for title slide

@@ -1,8 +1,14 @@
+import os
 from pptx import Presentation
 from pptx.util import Inches
 
 # Create a presentation object
-prs = Presentation()
+filename = 'Python_Data_Structures.pptx'
+
+if os.path.exists(filename):
+    prs = Presentation(filename)
+else:
+    prs = Presentation()
 
 # Title Slide
 slide_layout = prs.slide_layouts[0]  # 0 is the layout for title slide
@@ -26,7 +32,7 @@ content.text = """
 - A string is a sequence of characters.
 - Strings are used to represent text.
 - In Python, strings are immutable, meaning they cannot be changed after creation.
-- Strings can be enclosed in single quotes (' '), double quotes (" "), or triple quotes (''' ''' or """ """).
+- Strings can be enclosed in single quotes (' '), or double quotes (" ").
 """
 
 # Slide 2: Creating Strings
@@ -38,7 +44,6 @@ title.text = "Creating Strings"
 content.text = """
 - Single quotes: 'Hello'
 - Double quotes: "Hello"
-- Triple quotes for multi-line strings: '''Hello'''
 """
 
 # Slide 3: Accessing Characters
@@ -95,9 +100,9 @@ content = slide.placeholders[1]
 
 title.text = "String Formatting"
 content.text = """
-- Using % operator: 'Hello %s' % 'World'
 - Using str.format(): 'Hello {}'.format('World')
 - Using f-strings (Python 3.6+): f'Hello {name}'
+- Limiting a float to n decimal places: '{:.2f}'.format(3.20159)
 """
 
 # Slide 8: Common String Operations
@@ -138,7 +143,7 @@ content.text = """
 - An empty list: empty_list = []
 - A list of integers: int_list = [1, 2, 3, 4, 5]
 - A list of strings: str_list = ["apple", "banana", "cherry"]
-- A mixed list: mixed_list = [1, "apple", 3.14, True]
+- A mixed list: mixed_list = [1, "apple", 3.20, True]
 """
 
 # Slide 11: Accessing Elements
